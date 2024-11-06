@@ -1,5 +1,7 @@
 import 'package:alpha16/constants/constants.dart';
+import 'package:alpha16/screens/settings/setting_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'screens/home/home_screen.dart';
 
@@ -12,7 +14,7 @@ class Alpha16 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       theme: ThemeData(
           fontFamily: 'Gilroy',
           scaffoldBackgroundColor: grayBG,
@@ -28,7 +30,23 @@ class Alpha16 extends StatelessWidget {
             onSurface: black,
           )),
       debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
+      routerConfig: _router,
     );
   }
 }
+
+// GoRouter configuration
+final _router = GoRouter(
+  routes: [
+    GoRoute(
+      path: '/',
+      builder: (context, state) => const HomeScreen(),
+      routes: [
+        GoRoute(
+          path: 'settings',
+          builder: (context, state) => const SettingScreen(),
+        ),
+      ],
+    ),
+  ],
+);

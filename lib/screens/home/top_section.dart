@@ -1,15 +1,21 @@
 import 'package:alpha16/constants/constants.dart';
+import 'package:alpha16/main.dart';
+import 'package:alpha16/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
+
+import '../settings/setting_screen.dart';
 
 class TopSection extends StatelessWidget {
-  final bool activity;
-  final Function toogleActivity;
-  const TopSection(this.activity, this.toogleActivity, {super.key});
+  const TopSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    print('rebuild in top_section');
+    final getHomeState = context.findAncestorStateOfType<HomeScreenState>();
+    final activity = getHomeState?.activity ?? true;
+    final toogleActivity = getHomeState!.toogleActivity;
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
       child: Row(
@@ -67,16 +73,21 @@ class TopSection extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            margin: const EdgeInsets.only(left: 20),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
+          GestureDetector(
+            onTap: () {
+              context.go('/settings');
+            },
+            child: Container(
+              margin: const EdgeInsets.only(left: 20),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              width: 54,
+              height: 38,
+              alignment: Alignment.center,
+              child: SvgPicture.asset('assets/icons/menu.svg'),
             ),
-            width: 54,
-            height: 38,
-            alignment: Alignment.center,
-            child: SvgPicture.asset('assets/icons/menu.svg'),
           )
         ],
       ),

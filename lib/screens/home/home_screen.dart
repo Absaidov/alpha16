@@ -20,6 +20,10 @@ class HomeScreenState extends State<HomeScreen> {
     }
   }
 
+  void mySetState() {
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +35,7 @@ class HomeScreenState extends State<HomeScreen> {
           child: Column(
             children: [
               TopSection(),
-              Visibility(visible: activity, child: const CounterSection()),
+              Visibility(visible: activity, child: CounterSection(mySetState)),
               DataBaseSection(),
             ],
           ),

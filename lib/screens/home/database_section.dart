@@ -1,7 +1,9 @@
 import 'package:alpha16/constants/constants.dart';
+import 'package:alpha16/models/dhikr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:intl/intl.dart';
 
 class DataBaseSection extends StatelessWidget {
   const DataBaseSection({super.key});
@@ -33,8 +35,10 @@ class DataBaseSection extends StatelessWidget {
             ),
             Expanded(
               child: ListView.builder(
-                itemCount: 30,
+                itemCount: fakeDataBase.length,
                 itemBuilder: (context, index) {
+                  //Инвертация индекса
+                  index = fakeDataBase.length - 1 - index;
                   return Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -49,7 +53,7 @@ class DataBaseSection extends StatelessWidget {
                             width: 60,
                             alignment: Alignment.center,
                             child: Text(
-                              index.toString(),
+                              fakeDataBase[index].counter.toString(),
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -62,10 +66,10 @@ class DataBaseSection extends StatelessWidget {
                           color: white,
                           margin: const EdgeInsets.only(right: 20),
                         ),
-                        const Expanded(
+                        Expanded(
                             child: Text(
-                          'Description Dhikr Description Dhikr Description Dhikr Description Dhikr',
-                          style: TextStyle(
+                          fakeDataBase[index].title,
+                          style: const TextStyle(
                             fontSize: 12,
                             height: 1.2,
                           ),
@@ -75,7 +79,8 @@ class DataBaseSection extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(left: 15),
                           child: Text(
-                            '20.10.2024',
+                            DateFormat('dd.MM.yyyy')
+                                .format(fakeDataBase[index].date),
                             style: TextStyle(
                               fontSize: 10,
                               color: gray,
@@ -84,42 +89,12 @@ class DataBaseSection extends StatelessWidget {
                         ),
                         GestureDetector(
                           onTap: () {
-                            showDialog(
+                            myAlertDialog(
                               context: context,
-                              builder: (context) {
-                                return CupertinoAlertDialog(
-                                  title: const Text('Edit Dhikr'),
-                                  content: Column(
-                                    children: [
-                                      const SizedBox(height: 20),
-                                      const Text('Counter: 33'),
-                                      const SizedBox(height: 10),
-                                      const CupertinoTextField(
-                                        placeholder: 'Description Dhikr',
-                                      ),
-                                      const SizedBox(height: 20),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          FilledButton(
-                                              onPressed: () {},
-                                              child: Text(
-                                                'Save',
-                                                style: TextStyle(color: white),
-                                              )),
-                                          TextButton(
-                                              onPressed: () {},
-                                              child: Text(
-                                                'Delete',
-                                                style: TextStyle(color: red),
-                                              )),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                );
-                              },
+                              title: 'Edit Dhikr',
+                              descriptionDhikr: fakeDataBase[index].title,
+                              counter: fakeDataBase[index].counter,
+                              delete: true,
                             );
                           },
                           child: Container(
@@ -143,3 +118,10 @@ class DataBaseSection extends StatelessWidget {
     );
   }
 }
+
+List<Dhikr> fakeDataBase = [
+  Dhikr(123, 'title 1', DateTime.now()),
+  Dhikr(234, 'title 2', DateTime.now()),
+  Dhikr(546, 'title 3', DateTime.now()),
+  Dhikr(789, 'title 4', DateTime.now()),
+];

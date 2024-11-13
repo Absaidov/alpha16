@@ -1,9 +1,14 @@
 import 'package:alpha16/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class CounterSection extends StatefulWidget {
-  const CounterSection({super.key});
+  final Function mySetState;
+  const CounterSection(
+    this.mySetState, {
+    super.key,
+  });
 
   @override
   State<CounterSection> createState() => _CounterSectionState();
@@ -12,24 +17,42 @@ class CounterSection extends StatefulWidget {
 class _CounterSectionState extends State<CounterSection> {
   int counter = 0;
 
-  void increment() {
+  Future<void> increment() async {
+    final prefs = await SharedPreferences.getInstance();
     setState(() {
       counter++;
     });
+
+    prefs.setInt('counter', counter);
   }
 
-  void decrement() {
+  Future<void> decrement() async {
     if (counter > 0) {
+      final prefs = await SharedPreferences.getInstance();
+
       setState(() {
         counter--;
       });
+      prefs.setInt('counter', counter);
     }
   }
 
-  void zeroIng() {
+  Future<void> zeroIng() async {
     if (counter > 0) {
+      final prefs = await SharedPreferences.getInstance();
+
       setState(() {
         counter = 0;
+      });
+      prefs.setInt('counter', counter);
+    }
+  }
+
+  Future<void> getCounterFromPrefs() async {
+    final prefs = await SharedPreferences.getInstance();
+    if (prefs.containsKey('counter')) {
+      setState(() {
+        counter = prefs.getInt('counter')!;
       });
     }
   }
@@ -38,6 +61,7 @@ class _CounterSectionState extends State<CounterSection> {
   void initState() {
     // TODO: implement initState
     // print('Подключится к БД');
+    getCounterFromPrefs();
     super.initState();
   }
 
@@ -126,15 +150,27 @@ class _CounterSectionState extends State<CounterSection> {
               ],
             ),
           ),
-          Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5), color: Colors.white),
-            height: 45,
-            alignment: Alignment.center,
-            child: Text(
-              'Save Dhikr',
-              style: TextStyle(
-                color: blue,
+          GestureDetector(
+            onTap: () {
+              myAlertDialog(
+                context: context,
+                title: 'Save Dhikr',
+                descriptionDhikr: 'Enter the title',
+                counter: counter,
+                delete: false,
+                mySetState: widget.mySetState,
+              );
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5), color: Colors.white),
+              height: 45,
+              alignment: Alignment.center,
+              child: Text(
+                'Save Dhikr',
+                style: TextStyle(
+                  color: blue,
+                ),
               ),
             ),
           )

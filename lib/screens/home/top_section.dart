@@ -1,11 +1,8 @@
 import 'package:alpha16/constants/constants.dart';
-import 'package:alpha16/main.dart';
 import 'package:alpha16/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-
-import '../settings/setting_screen.dart';
 
 class TopSection extends StatelessWidget {
   const TopSection({super.key});

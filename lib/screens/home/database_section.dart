@@ -1,6 +1,5 @@
 import 'package:alpha16/constants/constants.dart';
 import 'package:alpha16/models/dhikr.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';

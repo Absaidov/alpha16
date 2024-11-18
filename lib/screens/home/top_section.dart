@@ -1,17 +1,20 @@
 import 'package:alpha16/constants/constants.dart';
-import 'package:alpha16/screens/home/home_screen.dart';
+import 'package:alpha16/providers/top_section_provider.dart';
+// import 'package:alpha16/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
 
 class TopSection extends StatelessWidget {
   const TopSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final getHomeState = context.findAncestorStateOfType<HomeScreenState>();
-    final activity = getHomeState?.activity ?? true;
-    final toogleActivity = getHomeState!.toogleActivity;
+    final topSectionPtovider = context.watch<TopSectionProvider>();
+
+    final activity = topSectionPtovider.activity;
+    final toogleActivity = topSectionPtovider.toogleActivity;
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),

@@ -1,10 +1,10 @@
-import 'package:alpha16/models/dhikr.dart';
-import 'package:alpha16/screens/home/database_section.dart';
-import 'package:alpha16/screens/home/home_screen.dart';
-import 'package:alpha16/screens/settings/setting_screen.dart';
+// import 'package:alpha16/models/dhikr.dart';
+// import 'package:alpha16/screens/home/database_section.dart';
+// import 'package:alpha16/screens/home/home_screen.dart';
+// import 'package:alpha16/screens/settings/setting_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+// import 'package:go_router/go_router.dart';
 
 Color blue = const Color(0xff4664FF);
 Color blueLight = const Color(0xff778DFF);
@@ -22,7 +22,7 @@ void myAlertDialog({
   required String descriptionDhikr,
   required int counter,
   required bool delete,
-  Function? mySetState,
+  required Function onPressed,
 }) {
   showDialog(
     context: context,
@@ -44,14 +44,7 @@ void myAlertDialog({
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 FilledButton(
-                    onPressed: () {
-                      fakeDataBase
-                          .add(Dhikr(counter, controller.text, DateTime.now()));
-                      if (mySetState != null) {
-                        mySetState();
-                      }
-                      context.pop();
-                    },
+                    onPressed: onPressed(),
                     child: Text(
                       'Save',
                       style: TextStyle(color: white),

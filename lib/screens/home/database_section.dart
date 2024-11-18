@@ -1,14 +1,19 @@
 import 'package:alpha16/constants/constants.dart';
-import 'package:alpha16/models/dhikr.dart';
+// import 'package:alpha16/models/dhikr.dart';
+import 'package:alpha16/providers/database_section_provider.dart';
+// import 'package:alpha16/screens/home/counter_section.dart';
+// import 'package:alpha16/screens/home/top_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 
 class DataBaseSection extends StatelessWidget {
   const DataBaseSection({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final dataBaseProvider = context.watch<DatabaseSectionProvider>();
     return Expanded(
       child: Container(
         decoration: const BoxDecoration(
@@ -34,10 +39,10 @@ class DataBaseSection extends StatelessWidget {
             ),
             Expanded(
               child: ListView.builder(
-                itemCount: fakeDataBase.length,
+                itemCount: dataBaseProvider.fakeDataBase.length,
                 itemBuilder: (context, index) {
                   //Инвертация индекса
-                  index = fakeDataBase.length - 1 - index;
+                  index = dataBaseProvider.fakeDataBase.length - 1 - index;
                   return Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -52,7 +57,8 @@ class DataBaseSection extends StatelessWidget {
                             width: 60,
                             alignment: Alignment.center,
                             child: Text(
-                              fakeDataBase[index].counter.toString(),
+                              dataBaseProvider.fakeDataBase[index].counter
+                                  .toString(),
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -67,7 +73,7 @@ class DataBaseSection extends StatelessWidget {
                         ),
                         Expanded(
                             child: Text(
-                          fakeDataBase[index].title,
+                          dataBaseProvider.fakeDataBase[index].title,
                           style: const TextStyle(
                             fontSize: 12,
                             height: 1.2,
@@ -78,8 +84,8 @@ class DataBaseSection extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(left: 15),
                           child: Text(
-                            DateFormat('dd.MM.yyyy')
-                                .format(fakeDataBase[index].date),
+                            DateFormat('dd.MM.yyyy').format(
+                                dataBaseProvider.fakeDataBase[index].date),
                             style: TextStyle(
                               fontSize: 10,
                               color: gray,
@@ -91,9 +97,12 @@ class DataBaseSection extends StatelessWidget {
                             myAlertDialog(
                               context: context,
                               title: 'Edit Dhikr',
-                              descriptionDhikr: fakeDataBase[index].title,
-                              counter: fakeDataBase[index].counter,
+                              descriptionDhikr:
+                                  dataBaseProvider.fakeDataBase[index].title,
+                              counter:
+                                  dataBaseProvider.fakeDataBase[index].counter,
                               delete: true,
+                              onPressed: () {},
                             );
                           },
                           child: Container(
@@ -117,10 +126,3 @@ class DataBaseSection extends StatelessWidget {
     );
   }
 }
-
-List<Dhikr> fakeDataBase = [
-  Dhikr(123, 'title 1', DateTime.now()),
-  Dhikr(234, 'title 2', DateTime.now()),
-  Dhikr(546, 'title 3', DateTime.now()),
-  Dhikr(789, 'title 4', DateTime.now()),
-];

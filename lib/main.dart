@@ -20,7 +20,10 @@ class Alpha16 extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => CounterProvider()),
+        ChangeNotifierProvider(
+          create: (context) => CounterProvider(),
+          lazy: false,
+        ),
         ChangeNotifierProvider(create: (context) => TopSectionProvider()),
         ChangeNotifierProvider(create: (context) => DatabaseSectionProvider()),
       ],

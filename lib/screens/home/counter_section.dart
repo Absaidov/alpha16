@@ -1,9 +1,13 @@
 import 'package:alpha16/constants/constants.dart';
+import 'package:alpha16/models/dhikr.dart';
 import 'package:alpha16/providers/counter_provider.dart';
 import 'package:alpha16/providers/database_section_provider.dart';
 import 'package:alpha16/providers/top_section_provider.dart';
+import 'package:alpha16/screens/settings/setting_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 class CounterSection extends StatelessWidget {
@@ -82,14 +86,44 @@ class CounterSection extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                myAlertDialog(
+                showDialog(
                   context: context,
-                  title: 'Save Dhikr',
-                  descriptionDhikr: 'Enter the title',
-                  counter: counterProvider.counter,
-                  delete: false,
-                  onPressed:
-                      context.read<DatabaseSectionProvider>().updateDatabase,
+                  builder: (context) {
+                    final controller = TextEditingController();
+                    return CupertinoAlertDialog(
+                      title: const Text('Save Dhikr'),
+                      content: Column(
+                        children: [
+                          const SizedBox(height: 20),
+                          Text('Counter: ${counterProvider.counter}'),
+                          const SizedBox(height: 10),
+                          CupertinoTextField(
+                            controller: controller,
+                            placeholder: 'Enter title',
+                          ),
+                          const SizedBox(height: 20),
+                          FilledButton(
+                              onPressed: () {
+                                context
+                                    .read<DatabaseSectionProvider>()
+                                    .addDhikr(
+                                      Dhikr(
+                                        counterProvider.counter,
+                                        controller.text,
+                                        DateTime.now(),
+                                      ),
+                                    );
+                                context.pop();
+                                controller.dispose();
+                              },
+                              child: Text(
+                                'Save',
+                                style: TextStyle(color: white),
+                              )),
+                        ],
+                      ),
+                    );
+                  },
                 );
               },
               child: Container(

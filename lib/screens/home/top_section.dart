@@ -1,5 +1,7 @@
 import 'package:alpha16/constants/constants.dart';
 import 'package:alpha16/providers/top_section_provider.dart';
+// import 'package:alpha16/screens/settings/setting_screen.dart';
+import 'package:easy_localization/easy_localization.dart';
 // import 'package:alpha16/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -41,7 +43,7 @@ class TopSection extends StatelessWidget {
                         alignment: Alignment.center,
                         height: 30,
                         child: Text(
-                          'Activity',
+                          'Activity'.tr(),
                           style: TextStyle(
                             color: activity ? white : gray,
                             fontSize: 12,
@@ -60,7 +62,7 @@ class TopSection extends StatelessWidget {
                             alignment: Alignment.center,
                             height: 30,
                             child: Text(
-                              'Saved',
+                              'Saved'.tr(),
                               style: TextStyle(
                                 color: activity ? gray : white,
                                 fontSize: 12,

@@ -1,30 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 import '../models/dhikr.dart';
 
 class DatabaseSectionProvider extends ChangeNotifier {
-  List<Dhikr> fakeDB = [
-    Dhikr(123, 'title 1', DateTime.now()),
-    Dhikr(234, 'title 2', DateTime.now()),
-    Dhikr(546, 'title 3', DateTime.now()),
-    Dhikr(789, 'title 4', DateTime.now()),
-  ];
-  void updateDatabase() {
-    notifyListeners();
+  late Box<Dhikr> box;
+  Future<void> openDhikrBox() async {
+    box = await Hive.openBox('dhikrs');
   }
 
   void addDhikr(Dhikr dhikr) {
-    fakeDB.add(dhikr);
-    notifyListeners();
-  }
-
-  void updateDhikr(int index, Dhikr newDhikr) {
-    fakeDB[index] = newDhikr;
+    box.add(dhikr);
     notifyListeners();
   }
 
   void removeDhikr(int index) {
-    fakeDB.removeAt(index);
+    box.delete(index);
     notifyListeners();
+  }
+
+  void updateDhikr(int index, Dhikr newDhikr) {
+    box.putAt(index, newDhikr);
+    notifyListeners();
+  }
+
+  void updateDatabase() {
+    notifyListeners();
+  }
+
+  @override
+  void dispose() {
+    box.close();
+    super.dispose();
   }
 }

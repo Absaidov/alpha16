@@ -15,3 +15,9 @@ Color black = const Color(0xff232323);
 
 Color red = const Color(0xFFFF0000);
 Color white = const Color(0xffFFFFFF);
+
+const Map<String, String> langsMap = {
+  'en': 'English',
+  'es': 'Spanish',
+  'ru': 'Русский',
+};

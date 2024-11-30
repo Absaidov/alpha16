@@ -1,16 +1,37 @@
 import 'package:alpha16/constants/constants.dart';
+import 'package:alpha16/hive/adapters.dart';
 import 'package:alpha16/providers/counter_provider.dart';
 import 'package:alpha16/providers/database_section_provider.dart';
 import 'package:alpha16/providers/top_section_provider.dart';
 import 'package:alpha16/screens/settings/setting_screen.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:easy_localization_loader/easy_localization_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 
 import 'screens/home/home_screen.dart';
 
-void main() {
-  runApp(const Alpha16());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+  await Hive.initFlutter();
+  Hive.registerAdapter(DhirkAdapter());
+  runApp(
+    EasyLocalization(
+      supportedLocales: const [
+        Locale('en'),
+        Locale('ru'),
+        Locale('es'),
+      ],
+      path: 'assets/langs/langs.csv',
+      assetLoader: CsvAssetLoader(),
+      fallbackLocale: const Locale('en'),
+      child: const Alpha16(),
+    ),
+  );
 }
 
 class Alpha16 extends StatelessWidget {
@@ -27,8 +48,10 @@ class Alpha16 extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => TopSectionProvider()),
         ChangeNotifierProvider(create: (context) => DatabaseSectionProvider()),
       ],
-      child: MaterialApp.router(
-        theme: ThemeData(
+      child: KeyedSubtree(
+        key: ValueKey(context.locale),
+        child: MaterialApp.router(
+          theme: ThemeData(
             fontFamily: 'Gilroy',
             scaffoldBackgroundColor: grayBG,
             colorScheme: ColorScheme(
@@ -41,9 +64,14 @@ class Alpha16 extends StatelessWidget {
               onError: red,
               surface: white,
               onSurface: black,
-            )),
-        debugShowCheckedModeBanner: false,
-        routerConfig: _router,
+            ),
+          ),
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: context.locale,
+          debugShowCheckedModeBanner: false,
+          routerConfig: _router,
+        ),
       ),
     );
   }

@@ -4,6 +4,7 @@ import 'package:alpha16/providers/counter_provider.dart';
 import 'package:alpha16/providers/database_section_provider.dart';
 import 'package:alpha16/providers/top_section_provider.dart';
 import 'package:alpha16/screens/settings/setting_screen.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -55,14 +56,17 @@ class CounterSection extends StatelessWidget {
                       ),
                       width: 154,
                       height: 154,
-                      child: const Column(
+                      child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SizedBox(height: 20),
-                          CurrentCounter(),
+                          const SizedBox(height: 20),
+                          const CurrentCounter(),
                           Text(
-                            'Dhikr',
-                            style: TextStyle(fontSize: 12, color: Colors.white),
+                            'Dhikr'.tr(),
+                            style: const TextStyle(
+                              fontSize: 12,
+                              color: Colors.white,
+                            ),
                           ),
                         ],
                       ),
@@ -91,15 +95,15 @@ class CounterSection extends StatelessWidget {
                   builder: (context) {
                     final controller = TextEditingController();
                     return CupertinoAlertDialog(
-                      title: const Text('Save Dhikr'),
+                      title: Text('Save Dhikr'.tr()),
                       content: Column(
                         children: [
                           const SizedBox(height: 20),
-                          Text('Counter: ${counterProvider.counter}'),
+                          Text('${'Counter:'.tr()} ${counterProvider.counter}'),
                           const SizedBox(height: 10),
                           CupertinoTextField(
                             controller: controller,
-                            placeholder: 'Enter title',
+                            placeholder: 'Enter title'.tr(),
                           ),
                           const SizedBox(height: 20),
                           FilledButton(
@@ -117,7 +121,7 @@ class CounterSection extends StatelessWidget {
                                 controller.dispose();
                               },
                               child: Text(
-                                'Save',
+                                'Save'.tr(),
                                 style: TextStyle(color: white),
                               )),
                         ],
@@ -133,7 +137,7 @@ class CounterSection extends StatelessWidget {
                 height: 45,
                 alignment: Alignment.center,
                 child: Text(
-                  'Save Dhikr',
+                  'Save Dhikr'.tr(),
                   style: TextStyle(
                     color: blue,
                   ),

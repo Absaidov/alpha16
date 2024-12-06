@@ -1,4 +1,5 @@
 import 'package:alpha16/constants/constants.dart';
+import 'package:alpha16/firebase_options.dart';
 import 'package:alpha16/hive/adapters.dart';
 import 'package:alpha16/providers/counter_provider.dart';
 import 'package:alpha16/providers/database_section_provider.dart';
@@ -6,6 +7,7 @@ import 'package:alpha16/providers/top_section_provider.dart';
 import 'package:alpha16/screens/settings/setting_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:easy_localization_loader/easy_localization_loader.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -17,6 +19,11 @@ import 'screens/home/home_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   MobileAds.instance.initialize();
   await EasyLocalization.ensureInitialized();
   await Hive.initFlutter();

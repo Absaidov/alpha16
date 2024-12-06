@@ -2,6 +2,7 @@
 // import 'package:alpha16/screens/home/database_section.dart';
 // import 'package:alpha16/screens/home/home_screen.dart';
 // import 'package:alpha16/screens/settings/setting_screen.dart';
+import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // import 'package:go_router/go_router.dart';
@@ -21,3 +22,22 @@ const Map<String, String> langsMap = {
   'es': 'Spanish',
   'ru': 'Русский',
 };
+
+Future<FirebaseRemoteConfig> setUpRemoteConfig() async {
+  final remoteConfig = FirebaseRemoteConfig.instance;
+  await remoteConfig.setConfigSettings(RemoteConfigSettings(
+    fetchTimeout: const Duration(minutes: 1),
+    minimumFetchInterval: const Duration(hours: 1),
+  ));
+
+  await remoteConfig.setDefaults(const {
+    "color_settings_page": "blue",
+    // "example_param_2": 3.14159,
+    // "example_param_3": true,
+    // "example_param_4": "Hello, world!",
+  });
+
+  await remoteConfig.fetchAndActivate();
+
+  return remoteConfig;
+}

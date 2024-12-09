@@ -46,18 +46,18 @@ class SettingScreen extends StatelessWidget {
               ),
               body: Column(
                 children: [
-                  ListTile(
-                    onTap: () {
-                      context.go('/');
-                    },
-                    title: Text('Go back to Home Page'.tr()),
-                  ),
-                  ListTile(
-                    onTap: () {
-                      context.read<CounterProvider>().increment();
-                    },
-                    title: const CurrentCounterInSettings(),
-                  ),
+                  const ListTile(
+                      // onTap: () {
+                      //   context.go('/');
+                      // },
+                      // title: Text('Go back to Home Page'.tr()),
+                      ),
+                  const ListTile(
+                      // onTap: () {
+                      //   context.read<CounterProvider>().increment();
+                      // },
+                      // title: const CurrentCounterInSettings(),
+                      ),
                   ListTile(
                     title: Text('Language'.tr()),
                     trailing: FilledButton(
@@ -94,20 +94,20 @@ class SettingScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  ValueListenableBuilder(
-                      valueListenable: context
-                          .read<DatabaseSectionProvider>()
-                          .box
-                          .listenable(),
-                      builder: (context, snapshot, _) {
-                        return Expanded(
-                            child: ListView.builder(
-                          itemCount: snapshot.length,
-                          itemBuilder: (context, index) {
-                            return Text(snapshot.getAt(index)?.title ?? '');
-                          },
-                        ));
-                      })
+                  // ValueListenableBuilder(
+                  //     valueListenable: context
+                  //         .read<DatabaseSectionProvider>()
+                  //         .box
+                  //         .listenable(),
+                  //     builder: (context, snapshot, _) {
+                  //       return Expanded(
+                  //           child: ListView.builder(
+                  //         itemCount: snapshot.length,
+                  //         itemBuilder: (context, index) {
+                  //           return Text(snapshot.getAt(index)?.title ?? '');
+                  //         },
+                  //       ));
+                  //     })
                 ],
               ),
             );

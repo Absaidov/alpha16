@@ -27,27 +27,22 @@ Dhikr – это мобильное приложение, которое пом�
 - **Cupertino Icons** для использования стандартных иконок iOS.
 
 ## Скриншоты на iPhone
+<table>
+  <tr>
+    <!-- Первая секция -->
+    <td style="text-align: center; vertical-align: top; width: 50%;">
+      <h2>Страница настроек</h2>
+      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Экран%20настроек.png" alt="Alt Text 1" width="200">
+      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Выбор%20языка.png" alt="Alt Text 2" width="200">
+      <p>Пользователь может изменить параметры приложения</p>
+    </td>
 
-<div style="display: flex; justify-content: space-between;">
-
-  <!-- Первая секция -->
-  <div style="width: 48%;">
-    <h2 style="text-align: center;">Страница настроек</h2>
-    <div style="display: flex; justify-content: space-between;">
-      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Экран%20настроек.png" alt="Alt Text 1" style="width: 200px; height: 400px; object-fit: contain;">
-      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Выбор%20языка.png" alt="Alt Text 2" style="width: 200px; height: 400px; object-fit: contain;">
-    </div>
-    <p style="text-align: center;">Пользователь может изменить параметры приложения</p>
-  </div>
-
-  <!-- Вторая секция -->
-  <div style="width: 48%;">
-    <h2 style="text-align: center;">Страница настроек</h2>
-    <div style="display: flex; justify-content: space-between;">
-      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Экран%20настроек.png" alt="Alt Text 1" style="width: 200px; height: 400px; object-fit: contain;">
-      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Выбор%20языка.png" alt="Alt Text 2" style="width: 200px; height: 400px; object-fit: contain;">
-    </div>
-    <p style="text-align: center;">Пользователь может изменить параметры приложения</p>
-  </div>
-
-</div>
+    <!-- Вторая секция -->
+    <td style="text-align: center; vertical-align: top; width: 50%;">
+      <h2>Страница настроек</h2>
+      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Экран%20настроек.png" alt="Alt Text 1" width="200">
+      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Выбор%20языка.png" alt="Alt Text 2" width="200">
+      <p>Пользователь может изменить параметры приложения</p>
+    </td>
+  </tr>
+</table>

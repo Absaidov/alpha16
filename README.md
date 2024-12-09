@@ -28,26 +28,60 @@ Dhikr – это мобильное приложение, которое пом�
 
 ## Скриншоты на iPhone
 
-<div style="display: flex; justify-content: space-between;">
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Документ</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    
+    .section {
+      width: 48%;
+      text-align: center;
+    }
+    
+    .images-container {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .section img {
+      width: 90px;
+      height: 180px;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
 
   <!-- Первая секция -->
-  <div style="width: 48%;">
-    <h2 style="text-align: center;">Страница настроек</h2>
-    <div style="display: flex; justify-content: space-between;">
-      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Экран%20настроек.png" alt="Alt Text 1" style="width: 90px; height: 180px; object-fit: contain;">
-      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Выбор%20языка.png" alt="Alt Text 2" style="width: 90px; height: 180px; object-fit: contain;">
+  <div class="section">
+    <h2>Страница настроек</h2>
+    <div class="images-container">
+      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Экран%20настроек.png" alt="Alt Text 1">
+      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Выбор%20языка.png" alt="Alt Text 2">
     </div>
-    <p style="text-align: center;">Пользователь может изменить параметры приложения</p>
+    <p>Пользователь может изменить параметры приложения</p>
   </div>
 
   <!-- Вторая секция -->
-  <div style="width: 48%;">
-    <h2 style="text-align: center;">Страница настроек</h2>
-    <div style="display: flex; justify-content: space-between;">
-      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Экран%20настроек.png" alt="Alt Text 1" style="width: 90px; height: 180px; object-fit: contain;">
-      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Выбор%20языка.png" alt="Alt Text 2" style="width: 90px; height: 180px; object-fit: contain;">
+  <div class="section">
+    <h2>Страница настроек</h2>
+    <div class="images-container">
+      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Экран%20настроек.png" alt="Alt Text 1">
+      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Выбор%20языка.png" alt="Alt Text 2">
     </div>
-    <p style="text-align: center;">Пользователь может изменить параметры приложения</p>
+    <p>Пользователь может изменить параметры приложения</p>
   </div>
 
 </div>
+
+</body>
+</html>

@@ -7,6 +7,7 @@ import 'package:alpha16/screens/settings/setting_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -35,7 +36,10 @@ class CounterSection extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   GestureDetector(
-                    onTap: () => counterProvider.decrement(),
+                    onTap: () {
+                      HapticFeedback.mediumImpact();
+                      counterProvider.decrement();
+                    },
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -48,7 +52,10 @@ class CounterSection extends StatelessWidget {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () => counterProvider.increment(),
+                    onTap: () {
+                      HapticFeedback.mediumImpact();
+                      counterProvider.increment();
+                    },
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -73,7 +80,10 @@ class CounterSection extends StatelessWidget {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () => counterProvider.zeroIng(),
+                    onTap: () {
+                      HapticFeedback.mediumImpact();
+                      counterProvider.zeroIng();
+                    },
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),

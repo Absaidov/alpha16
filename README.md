@@ -31,21 +31,21 @@ Dhikr – это мобильное приложение, которое пом�
 <div style="display: flex; justify-content: space-between;">
 
   <!-- Первая секция -->
-  <div style="width: 10%;">
+  <div style="width: 30%;">
     <h2 style="text-align: center;">Страница настроек</h2>
     <div style="display: flex; justify-content: space-between;">
-      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Экран%20настроек.png" alt="Alt Text 1" style="width: 200px; height: 400px; object-fit: contain;">
-      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Выбор%20языка.png" alt="Alt Text 2" style="width: 200px; height: 400px; object-fit: contain;">
+      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Экран%20настроек.png" alt="Alt Text 1" style="width: 100px; height: 200px; object-fit: contain;">
+      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Выбор%20языка.png" alt="Alt Text 2" style="width: 100px; height: 200px; object-fit: contain;">
     </div>
     <p style="text-align: center;">Пользователь может изменить параметры приложения</p>
   </div>
 
   <!-- Вторая секция -->
-  <div style="width: 25%;">
+  <div style="width: 30%;">
     <h2 style="text-align: center;">Страница настроек</h2>
     <div style="display: flex; justify-content: space-between;">
-      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Экран%20настроек.png" alt="Alt Text 1" style="width: 200px; height: 400px; object-fit: contain;">
-      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Выбор%20языка.png" alt="Alt Text 2" style="width: 200px; height: 400px; object-fit: contain;">
+      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Экран%20настроек.png" alt="Alt Text 1" style="width: 100px; height: 200px; object-fit: contain;">
+      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Выбор%20языка.png" alt="Alt Text 2" style="width: 100px; height: 200px; object-fit: contain;">
     </div>
     <p style="text-align: center;">Пользователь может изменить параметры приложения</p>
   </div>

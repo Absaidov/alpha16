@@ -62,7 +62,7 @@ Dhikr – это мобильное приложение, которое пом�
     <td style="text-align: center; vertical-align: top; width: 50%;">
       <h2>Экран настроек</h2>
       <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Android/Межстраничная%20реклама.png" alt="Alt Text 1" width="200">
-      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Выбор%20языка.png" alt="Alt Text 2" width="200">
+      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Android/Страница%20настроек.png" width="200">
       <p>Пользователь может изменить параметры приложения</p>
     </td>
 

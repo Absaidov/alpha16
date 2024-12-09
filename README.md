@@ -31,7 +31,7 @@ Dhikr – это мобильное приложение, которое пом�
 <div style="display: flex; justify-content: space-between;">
 
   <!-- Первая секция -->
-  <div style="width: 48%;">
+  <div style="width: 30%;">
     <h2 style="text-align: center;">Страница настроек</h2>
     <div style="display: flex; justify-content: space-between;">
       <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Экран%20настроек.png" alt="Alt Text 1" style="width: 200px; height: 400px; object-fit: contain;">
@@ -41,7 +41,7 @@ Dhikr – это мобильное приложение, которое пом�
   </div>
 
   <!-- Вторая секция -->
-  <div style="width: 48%;">
+  <div style="width: 30%;">
     <h2 style="text-align: center;">Страница настроек</h2>
     <div style="display: flex; justify-content: space-between;">
       <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Экран%20настроек.png" alt="Alt Text 1" style="width: 200px; height: 400px; object-fit: contain;">

@@ -33,7 +33,7 @@ Dhikr – это мобильное приложение, которое пом�
     <td style="text-align: center; vertical-align: top; width: 50%;">
       <h2>Главный экран</h2>
       <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Главная%20страница.png" alt="Alt Text 1" width="200">
-      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Выбор%20языка.png" alt="Alt Text 2" width="200">
+      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Сохраненные%20зикры.png" alt="Alt Text 2" width="200">
       <p>Пользователь может изменить параметры приложения</p>
     </td>
     <!-- Вторая секция -->

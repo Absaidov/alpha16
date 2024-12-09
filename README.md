@@ -32,6 +32,28 @@ Dhikr – это мобильное приложение, которое пом�
     <!-- Первая секция -->
     <td style="text-align: center; vertical-align: top; width: 50%;">
       <h2>Главный экран</h2>
+      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/iPhone/Главная%20страница.png" alt="Alt Text 1" width="200">
+      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/iPhone/Сохраненные%20зикры.png" alt="Alt Text 2" width="200">
+      <p>Пользователь сохраняет, редактирует или удаляет зикры</p>
+    </td>
+    <!-- Вторая секция -->
+    <td style="text-align: center; vertical-align: top; width: 50%;">
+      <h2>Экран настроек</h2>
+      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/iPhone/Экран%20настроек.png" alt="Alt Text 1" width="200">
+      <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/iPhone/Выбор%20языка.png" alt="Alt Text 2" width="200">
+      <p>Пользователь может изменить параметры приложения</p>
+    </td>
+
+  </tr>
+</table>
+
+
+## Скриншоты на Android
+<table>
+  <tr>
+    <!-- Первая секция -->
+    <td style="text-align: center; vertical-align: top; width: 50%;">
+      <h2>Главный экран</h2>
       <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Главная%20страница.png" alt="Alt Text 1" width="200">
       <img src="https://github.com/Absaidov/screen_shots/blob/main/Приложение%20Dhikr/Сохраненные%20зикры.png" alt="Alt Text 2" width="200">
       <p>Пользователь сохраняет, редактирует или удаляет зикры</p>
